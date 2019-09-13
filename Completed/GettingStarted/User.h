@@ -21,7 +21,7 @@
 
 #define kJoeName @"Joe"
 
-#define kJoeUUID @"" //TODO: swap with a userId for Joe
+#define kJoeUUID @"" //TODO: swap with a user uuid for Joe
 
 #define kJoeJWT @"" //TODO: swap with a token for Joe
 

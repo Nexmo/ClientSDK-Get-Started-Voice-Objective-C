@@ -41,7 +41,7 @@
 }
 
 
-#pragma mark Setup
+//MARK:  Setup Nexmo Client
 
 - (void)setupNexmoClient {
     self.client = [NXMClient shared];

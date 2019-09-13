@@ -42,7 +42,7 @@
 }
 
 
-#pragma mark Setup
+//MARK:  Setup Nexmo Client
 
 - (void)setupNexmoClient {
     self.client = [NXMClient shared];
@@ -84,8 +84,6 @@
 }
 
 
-#pragma mark IncomingCall
-
 - (void)displayIncomingCallAlert:(NXMCall *)call {
     if(![NSThread isMainThread]){
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -110,6 +108,9 @@
     [self presentViewController:alertController animated:YES completion:nil];
 }
 
+
+//MARK: Incoming call - Accept
+
 - (void)didPressAnswerIncomingCall:(NXMCall *)call {
     self.call = nil;
     self.callStatus = CallStatusInitiated;
@@ -131,9 +132,11 @@
     }];
 }
 
+
+//MARK: Incoming call - Reject
+
 - (void)didPressRejectIncomingCall:(NXMCall *)call {
     self.call = nil;
-    
     __weak ReceivePhoneCallViewController *weakSelf = self;
     [call reject:^(NSError * _Nullable error) {
         if(error) {
